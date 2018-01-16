@@ -30,9 +30,7 @@ export default () => {
   const app = new App(<div>Hello</div>);
 
   app.register(UniversalUniversalEventsToken, UniversalEvents)
-  app.register(LoggerToken, UniversalLogger, {
-    UniversalEvents: app.plugin(UniversalEvents)
-  });
+  app.register(LoggerToken, UniversalLogger);
 
   if (__BROWSER__) {
     // log browser memory usage every minute
