@@ -1,17 +1,34 @@
 /* eslint-env browser */
-import universalEvents from 'fusion-plugin-universal-events';
 import test from 'tape-cup';
+import App, {createPlugin} from 'fusion-core';
+import {UniversalEventsToken} from 'fusion-plugin-universal-events';
+import {LoggerToken} from 'fusion-tokens';
+import {getSimulator} from 'fusion-test-utils';
 import plugin from '../browser.js';
 
 test('Server logger', t => {
   let called = false;
-  const emitter = universalEvents({fetch: window.fetch});
-  const logger = plugin({emitter});
-  emitter.on('universal-log', ({args}) => {
-    t.equals(args[0], 'test', 'message is ok');
-    called = true;
+  const app = new App('el', el => el);
+  app.register(LoggerToken, plugin);
+  app.register(
+    UniversalEventsToken,
+    createPlugin({
+      provides: () => {
+        return {
+          emit(type, payload) {
+            t.equal(type, 'universal-log');
+            console.log(payload);
+            called = true;
+          },
+        };
+      },
+    })
+  );
+  app.middleware({logger: LoggerToken}, ({logger}) => {
+    logger.info('test');
+    return (ctx, next) => next();
   });
-  logger.info('test');
+  getSimulator(app);
   t.equals(called, true, 'called');
   t.end();
 });
