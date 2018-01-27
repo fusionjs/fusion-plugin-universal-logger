@@ -10,7 +10,7 @@ import {UniversalEventsToken} from 'fusion-plugin-universal-events';
 import {Logger} from 'winston';
 import {UniversalLoggerConfigToken} from './tokens';
 
-export default createPlugin({
+export default __NODE__ && createPlugin({
   deps: {
     emitter: UniversalEventsToken,
     config: UniversalLoggerConfigToken,

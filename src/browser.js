@@ -29,7 +29,7 @@ function normalizeErrors(value) {
   return value;
 }
 
-export default createPlugin({
+export default __BROWSER__ && createPlugin({
   deps: {
     emitter: UniversalEventsToken,
   },
