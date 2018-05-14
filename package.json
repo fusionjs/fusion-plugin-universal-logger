@@ -23,7 +23,7 @@
     "./dist/browser.es2015.es.js": "./dist/browser.es2017.es.js"
   },
   "dependencies": {
-    "winston": "^2.4.2"
+    "winston": "^3.0.0-rc5"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
