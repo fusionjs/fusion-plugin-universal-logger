@@ -19,13 +19,12 @@ import plugin from '../server.js';
 import {UniversalLoggerConfigToken} from '../tokens';
 
 type SupportedLevelsType =
-  | 'trace'
-  | 'debug'
-  | 'info'
-  | 'access'
-  | 'warn'
   | 'error'
-  | 'fatal';
+  | 'warn'
+  | 'info'
+  | 'verbose'
+  | 'debug'
+  | 'silly';
 
 test('Server logger', async t => {
   let called = false;
