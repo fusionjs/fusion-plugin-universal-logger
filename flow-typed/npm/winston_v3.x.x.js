@@ -1,3 +1,4 @@
+// @flow
 // flow-typed signature: 0ab64791f05a208ec56c274ea627f653
 // flow-typed version: 538388dcea/winston_v3.x.x/flow_>=v0.34.x
 
