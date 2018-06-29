@@ -2464,9 +2464,9 @@ fusion-test-utils@^1.1.2:
     koa "^2.4.1"
     node-mocks-http "^1.6.6"
 
-fusion-tokens@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/fusion-tokens/-/fusion-tokens-1.0.3.tgz#e247a076ef145337287e103ecbc42486594e96c5"
+fusion-tokens@^1.0.4-0:
+  version "1.0.4-0"
+  resolved "https://registry.yarnpkg.com/fusion-tokens/-/fusion-tokens-1.0.4-0.tgz#fe2a8b5aef497c358e6c82ed21566d0d67ee3181"
 
 gauge@~2.7.3:
   version "2.7.4"
