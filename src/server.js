@@ -34,7 +34,7 @@ const plugin =
         if (typeof logger[key] === 'function') {
           // $FlowFixMe
           UniversalLogger.prototype[key] = (...args) =>
-            emitter.emit('universal-log', {args, level: key});
+            emitter.emit('universal-log', {args, level: key, source: 'server'});
         }
       }
       return new UniversalLogger();
